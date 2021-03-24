@@ -1,0 +1,45 @@
+
+<mat-form-field appearance="fill" class="itSaysWidth">
+  <mat-label class="text-white">Search</mat-label>
+  <input matInput type="text" class="text-primary " [(ngModel)]="filterText">
+</mat-form-field>
+
+<mat-chip-list class="mat-chip-list-stacked"  aria-label="Color selection" *ngIf="filterText.length>3">
+  <mat-chip selected >
+    {{filterText}}
+  </mat-chip>
+</mat-chip-list>
+
+
+<mat-card class="example-card mt-lg-3 bg-dark border border-primary" *ngFor="let articledto of articlesDto |filterPipe:filterText">
+    <mat-card-header>
+      <mat-card-title class="text-primary">{{articledto.title}}</mat-card-title>
+      <mat-card-subtitle class="text-white">
+         <strong class="authorinfo"> {{articledto.firstName}} / {{articledto.lastName}}</strong>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel class="bg-dark" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-light">
+              Yazıyı oku
+            </mat-panel-title>
+            <mat-panel-description class="text-white">
+              tıkla ve yazılan yazıyı gör
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-chip-list aria-label="Fish selection">
+          <mat-chip color="primary" class="pad" selected>{{articledto.writing}}</mat-chip>
+          </mat-chip-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+    <mat-card-actions class="text-white">
+      <button mat-button color="warn">{{articledto.date |date}}</button>
+      <button mat-button color="primary">{{articledto.categoryName}}</button>
+      <button mat-flat-button color="accent" routerLink="/articles/{{articledto.number}}"  (click)="readHistory(articledto)">incele</button>
+    </mat-card-actions>
+    
+  <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+</mat-card>

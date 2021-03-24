@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+::selection{
+    background-color: #2471A3;
+    color: #17202A;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #27303a;
+}
+
+.darkMode{
+    background-color: #212529;
+    color: #f8f9fa;
+}
+.lightMode{
+    background-color: #f8f9fa;
+    color: #212529;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #323d49;
+}

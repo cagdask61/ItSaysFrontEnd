@@ -1,0 +1,25 @@
+
+<mat-progress-bar mode="query" *ngIf="!dataLoaded"></mat-progress-bar>
+
+<div class="input-group mb-3 bg-dark">
+  <input type="text" [(ngModel)]="filterText" class="form-control bg-dark text-white" placeholder="Category Search" aria-label="Username" aria-describedby="filter">
+</div>
+<mat-chip color="primary" *ngIf="filterText.length >= 2" selected>{{filterText}}</mat-chip>
+
+
+<section class="example-section">
+  <mat-checkbox class="example-margin text-white" id="checkboxcategory" [(ngModel)]="isCategoryList" (change)="isCategoryDisable()">Category Active</mat-checkbox>
+</section>
+
+<mat-selection-list [multiple]="false"  *ngIf="dataLoaded && isCategoryList">
+  <mat-list-option [class]="getAllCategoryClass()" (click)="openSnackBar('tümü')" routerLink="/">{{title}}</mat-list-option>
+  <mat-list-option *ngFor="let category of categories |categoryPipe:filterText" 
+  routerLink="articles/category/{{category.id}}" 
+  [class]="getCurrentCategoryClass(category)"  
+  (click)="setCurrentCategory(category)" 
+  matTooltip="{{category.categoryName}} ile ilgili yazıları içerir."
+  matTooltipClass="example-tooltip-red"
+        class="example-button">
+    {{category.categoryName}}
+  </mat-list-option>
+</mat-selection-list>

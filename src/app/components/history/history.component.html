@@ -1,0 +1,42 @@
+
+     <div class="d-grid gap-2">
+     <button mat-button color="accent" class="text-center btn-lg">Geçmiş</button>
+    </div>
+<!-- 
+     <mat-selection-list [multiple]="false">
+        <mat-list-option *ngFor="let history of historyItems"  [value]="history" class="text-light">
+          {{history.articleDetail.title}}
+          {{history.articleDetail.categoryName}}
+        </mat-list-option>
+      </mat-selection-list> -->
+
+
+
+      <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Başlık</th>
+                <th>Yazar adı</th>
+                <th>Yazar Soyadı</th>
+                <th>Ziyaret sayısı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let history of historyItems" class="table-dark">
+                <td>
+                    <button mat-button color="warn">{{history.articleDetail.title}}</button>
+                </td>
+                <td>
+                    <button mat-button color="primary">{{history.articleDetail.firstName}}</button>
+                </td>
+                <td>
+                    <button mat-button color="accent">{{history.articleDetail.lastName}}</button>
+                </td>
+                <td>
+                    <button mat-button color="primary" type="button">
+                        Toplam ziyaret <span class="badge bg-dark">{{history.quantity}}</span>
+                      </button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
