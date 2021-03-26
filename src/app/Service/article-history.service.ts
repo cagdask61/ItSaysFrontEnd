@@ -21,9 +21,14 @@ export class ArticleHistoryService {
       articleHistoryItem.quantity = 1;
       ArticleHistorys.push(articleHistoryItem);
     }
+    localStorage.setItem('history',articleDetail.title);
+    
+    
   }
 
   writeHistory():ArticleHistory[]{
     return ArticleHistorys;
   }
+
+
 }

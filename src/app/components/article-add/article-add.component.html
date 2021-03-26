@@ -4,24 +4,23 @@
 
         <form [formGroup]="articleAddForm">
             <div class="form-floating mb-3">
-                <input type="number" formControlName="authorId" class="form-control bg-dark text-light" id="floatingInput" placeholder="name@example.com">
+                <input type="number" formControlName="authorId" class="form-control bg-dark text-light" id="floatingInput" placeholder="I">
                 <label for="floatingInput" class="text-light">Author</label>
             </div>
       
             <div class="form-floating mb-3">
-                <input type="number" formControlName="categoryId" class="form-control bg-dark text-light" id="floatingPassword" placeholder="Password">  
+                <input type="number" formControlName="categoryId" class="form-control bg-dark text-light" id="floatingPassword" placeholder="category">  
                 <label for="floatingPassword" class="text-light">Category</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input type="text" formControlName="title" class="form-control bg-dark text-light" id="floatingPassword" placeholder="Password">
-                
-                <label for="floatingPassword" class="text-light">Title</label>
+                <input type="text" formControlName="title" class="form-control bg-dark text-light" id="floatingTitle" placeholder="title">
+                <label for="floatingTitle" class="text-light">Title</label>
             </div>
 
                 <div class="form-floating mb-3">
-                <input type="text" formControlName="writing" class="form-control bg-dark text-light" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword" class="text-light">Writing</label>
+                <input type="text" formControlName="writing" class="form-control bg-dark text-light" id="floatingWriting" placeholder="writing">
+                <label for="floatingWriting" class="text-light">Writing</label>
             </div>
 
         </form>

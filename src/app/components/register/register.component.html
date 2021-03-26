@@ -1,0 +1,23 @@
+<form [formGroup]="registerForm">
+    <div class="form-floating mb-3 bg-dark">
+        <input type="email" formControlName="email" class="form-control bg-dark text-light" id="floatingInput" placeholder="name@gmail.com or name@hotmail.com">
+        <label for="floatingInput" class="text-light">Email</label>
+    </div>
+    <div class="form-floating mb-3 bg-dark">
+        <input type="password" formControlName="password" class="form-control bg-dark text-light" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword" class="text-light">Password</label>
+    </div>
+    <div class="form-floating mb-3 bg-dark">
+        <input type="text" formControlName="firstName" class="form-control bg-dark text-light" id="floatingfirstName" placeholder="FirstName">
+        <label for="floatingfirstName" class="text-light">FirstName</label>
+    </div>
+    <div class="form-floating mb-3 bg-dark">
+        <input type="text" formControlName="lastName" class="form-control bg-dark text-light" id="floatingLastName" placeholder="LastName">
+        <label for="floatingLastName" class="text-light">LastName</label>
+    </div>
+</form>
+<div class="d-grid gap-2">
+    <button mat-flat-button color="accent" (click)="register()">
+    Register
+    </button>
+</div>

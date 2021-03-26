@@ -41,21 +41,21 @@ export class CategoryComponent implements OnInit {
 
   getCurrentCategoryClass(category:Category){
     if(category == this.currentCategory){
-      return "text-center text-warning"
+      return "text-center text-danger"
     }
     else{
-      return "text-center text-white"
+      return "text-center text-light"
     }
   }
 
 
   getAllCategoryClass(){
     if(!this.currentCategory){
-     return "text-center text-warning"
+     return "text-center text-danger"
     }
     
     else{
-     return "text-center text-white"
+     return "text-center text-light"
     }
   }
 

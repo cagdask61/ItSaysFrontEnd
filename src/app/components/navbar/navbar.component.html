@@ -1,32 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-primary" > <!--[ngClass]="{'dark-theme-mode':checkedDarkMode}"-->
     <div class="container-fluid">
-      <button mat-button  class="navbar-brand text-white">{{title}}</button>
+      <button mat-button class="navbar-brand text-white">{{title}}</button>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/" matTooltip="{{navbarInfoText[0]}}">
+            <button mat-button color="primary" routerLink="/" id="home" matTooltip="{{navbarInfoText[0]}}">
               <mat-icon aria-hidden="false" aria-label="Example home icon" >
                 {{navbarIcon[0]}}
               </mat-icon>
+              <span *ngIf="isActiveIcon"> {{navbarInfoText[0]}}</span>
             </button>
           </li>
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/article/add" matTooltip="{{navbarInfoText[2]}}">
-              <mat-icon>{{navbarIcon[2]}}</mat-icon>
+            <button mat-button color="primary" routerLink="/article/add" id="articleadd" matTooltip="{{navbarInfoText[2]}}">
+              <mat-icon>{{navbarIcon[2]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[2]}}</span>
             </button>
           </li>
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/history" matTooltip="{{navbarInfoText[3]}}">
-              <mat-icon>{{navbarIcon[3]}}</mat-icon>
+            <button mat-button color="primary" routerLink="/history" id="history" matTooltip="{{navbarInfoText[3]}}">
+              <mat-icon>{{navbarIcon[3]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[3]}}</span>
+            </button>
+          </li>
+          <!-- <li class="nav-item">
+            <button mat-button color="primary" routerLink="/register" id="register" matTooltip="{{navbarInfoText[5]}}">
+              <mat-icon>{{navbarIcon[5]}}</mat-icon>
+            </button>
+          </li> -->
+          <li class="nav-item">
+            <button mat-button color="primary" routerLink="/login" id="login" matTooltip="{{navbarInfoText[6]}}">
+              <mat-icon>{{navbarIcon[6]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[6]}}</span>
             </button>
           </li>
         </ul>
         <span class="navbar-text">
-          <mat-slide-toggle [ngClass]="{'darkMode':checkedDarkMode}"  [(ngModel)]="checkedDarkMode" (change)="storeThemeSelection()" matTooltip="{{navbarInfoText[4]}}">
-            <mat-icon>{{navbarIcon[4]}}</mat-icon>
+          <mat-slide-toggle [ngClass]="{'darkMode':checkedDarkMode}"  [(ngModel)]="isActiveIcon" (change)="storeThemeSelection()" matTooltip="{{navbarInfoText[4]}}">
+            <mat-icon>{{navbarIcon[4]}}</mat-icon> 
           </mat-slide-toggle>
         </span>
       </div>

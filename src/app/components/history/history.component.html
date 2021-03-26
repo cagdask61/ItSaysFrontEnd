@@ -1,16 +1,10 @@
 
      <div class="d-grid gap-2">
-     <button mat-button color="accent" class="text-center btn-lg">Geçmiş</button>
+     <button mat-button color="accent" class="text-center btn-lg mb-3" (click)="denemeClick()">
+         <mat-icon>history</mat-icon>
+         Geçmiş
+        </button>
     </div>
-<!-- 
-     <mat-selection-list [multiple]="false">
-        <mat-list-option *ngFor="let history of historyItems"  [value]="history" class="text-light">
-          {{history.articleDetail.title}}
-          {{history.articleDetail.categoryName}}
-        </mat-list-option>
-      </mat-selection-list> -->
-
-
 
       <table class="table table-dark table-striped">
         <thead>
@@ -40,3 +34,8 @@
             </tr>
         </tbody>
       </table>
+
+
+      <h1 class="text-light">
+          {{deneme}}
+      </h1>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ArticleHistory } from 'src/app/Models/ArticleModel/articleHistory';
 import { ArticleHistoryService } from 'src/app/Service/article-history.service';
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-history',
@@ -10,7 +12,8 @@ import { ArticleHistoryService } from 'src/app/Service/article-history.service';
 export class HistoryComponent implements OnInit {
 
   historyItems:ArticleHistory[] = [];
-  constructor(private articleHistoryService:ArticleHistoryService) { }
+  deneme:string;
+  constructor(private articleHistoryService:ArticleHistoryService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.writeHistory();
@@ -18,6 +21,15 @@ export class HistoryComponent implements OnInit {
 
   writeHistory(){
     this.historyItems = this.articleHistoryService.writeHistory();
+    this.historyItems.forEach(element => {
+      localStorage.setItem('history',element.articleDetail.title);
+      
+    }); 
+    
+    this.deneme = localStorage.getItem('history');
   }
 
+  denemeClick(){
+    this.dialog.open(MessageComponent);
+  }
 }

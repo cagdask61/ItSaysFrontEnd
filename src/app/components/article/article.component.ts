@@ -52,7 +52,12 @@ export class ArticleComponent implements OnInit {
 
   readHistory(article:ArticleDto){
     this.articleHistoryService.readHistory(article);
+    
   }
 
+
+  openMessages(action:string){
+    this._sncakBar.open("En yakın zamanda",action,{duration:3000,verticalPosition:"bottom",horizontalPosition:"left"})
+  }
  
 }

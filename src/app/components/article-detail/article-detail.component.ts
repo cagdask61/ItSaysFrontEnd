@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ArticleDto } from 'src/app/Models/ArticleModel/articleDto';
 import { ArticleService } from 'src/app/Service/article.service';
@@ -18,7 +20,7 @@ export class ArticleDetailComponent implements OnInit {
   articleFirstName:string;
   articleLastName:string;
   isCheckedData:boolean=false;
-  constructor(private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService) { }
+  constructor(private router:Router,private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -26,7 +28,7 @@ export class ArticleDetailComponent implements OnInit {
         this.getArticleDto(params["articleId"])
       }
       else{
-        console.log("hata oldu");
+        this._snackBar.open("Hata!","Close",{duration:4000,verticalPosition:"top",horizontalPosition:"center"});
       }
     })
   }
@@ -43,4 +45,7 @@ export class ArticleDetailComponent implements OnInit {
     })
   }
 
+
 }
+
+

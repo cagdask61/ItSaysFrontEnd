@@ -1,0 +1,17 @@
+<div class="card bg-dark">
+    <h3 class="card-header text-center text-info">Category Ekleme işlemi</h3>
+    <div class="card-body">
+
+        <form [formGroup]="categoryAddForm">
+            <div class="form-floating mb-3">
+                <input type="text" formControlName="categoryName" class="form-control bg-dark text-light" id="floatingInput" placeholder="...">
+                <label for="floatingInput" class="text-light">Category Name</label>
+            </div>
+      
+        </form>
+    </div>
+    <div class="card-footer d-grid gap-2">
+        <button mat-raised-button color="primary" class="btn-lg" (click)="categoryAdd()">kategori ekle</button>
+
+    </div>
+</div>

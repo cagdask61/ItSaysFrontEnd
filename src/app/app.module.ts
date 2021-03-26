@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
@@ -27,7 +27,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +47,13 @@ import { ArticleUpdateComponent } from './components/article-update/article-upda
 import { ArticleDeleteComponent } from './components/article-delete/article-delete.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { HistoryComponent } from './components/history/history.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { MessageComponent } from './components/message/message.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { LoginGuard } from './guards/login.guard';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -59,7 +68,12 @@ import { HistoryComponent } from './components/history/history.component';
     ArticleUpdateComponent,
     ArticleDeleteComponent,
     ArticleDetailComponent,
-    HistoryComponent
+    HistoryComponent,
+    LoginComponent,
+    RegisterComponent,
+    MessageComponent,
+    FooterComponent,
+    CategoryAddComponent
   ],
   imports: [
     BrowserModule,
@@ -92,11 +106,18 @@ import { HistoryComponent } from './components/history/history.component';
     MatGridListModule,
     MatMenuModule,
     MatRadioModule,
+    MatPaginatorModule,
+    MatBottomSheetModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-left"
     })
   ],
-  providers: [],
+  providers: [
+    LoginGuard,
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

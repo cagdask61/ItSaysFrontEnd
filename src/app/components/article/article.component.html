@@ -38,8 +38,27 @@
     <mat-card-actions class="text-white">
       <button mat-button color="warn">{{articledto.date |date}}</button>
       <button mat-button color="primary">{{articledto.categoryName}}</button>
-      <button mat-flat-button color="accent" routerLink="/articles/{{articledto.number}}"  (click)="readHistory(articledto)">incele</button>
+      <button mat-button color="accent" routerLink="/articles/{{articledto.number}}"  (click)="readHistory(articledto)">incele</button>
+      <button mat-button color="accent"  (click)="openMessages('✖')">
+        <mat-icon>turned_in</mat-icon>
+      </button>
     </mat-card-actions>
     
   <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
 </mat-card>
+
+
+<button mat-icon-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>details</mat-icon>
+    <span>İncele</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>turned_in</mat-icon>
+    <span>Kaydet</span>
+  </button>
+  
+</mat-menu>
