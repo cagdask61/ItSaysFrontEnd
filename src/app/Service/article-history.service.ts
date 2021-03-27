@@ -7,7 +7,6 @@ import { ArticleHistorys } from '../Models/ArticleModel/articleHistorys';
   providedIn: 'root'
 })
 export class ArticleHistoryService {
-
   constructor() { }
 
   readHistory(articleDetail:ArticleDto){
@@ -21,9 +20,8 @@ export class ArticleHistoryService {
       articleHistoryItem.quantity = 1;
       ArticleHistorys.push(articleHistoryItem);
     }
-    localStorage.setItem('history',articleDetail.title);
-    
-    
+    //localStorage.setItem('history',articleDetail.title);
+    localStorage.setItem('historya',JSON.stringify(articleDetail));
   }
 
   writeHistory():ArticleHistory[]{
