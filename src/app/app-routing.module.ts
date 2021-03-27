@@ -23,7 +23,8 @@ const routes: Routes = [
   {path:"history",component:HistoryComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"category/add",component:CategoryAddComponent, canActivate:[LoginGuard]}
+  {path:"category/add",component:CategoryAddComponent, canActivate:[LoginGuard]},
+  {path:"article/update/:id",component:ArticleUpdateComponent}
 ];
 
 @NgModule({

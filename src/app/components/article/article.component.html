@@ -4,14 +4,14 @@
   <input matInput type="text" class="text-primary " [(ngModel)]="filterText">
 </mat-form-field>
 
-<mat-chip-list class="mat-chip-list-stacked"  aria-label="Color selection" *ngIf="filterText.length>3">
+<mat-chip-list class="mat-chip-list-stacked"  aria-label="Color selection" *ngIf="filterText.length>=2">
   <mat-chip selected >
-    {{filterText}}
+    <mat-icon>search</mat-icon>  {{filterText}}
   </mat-chip>
 </mat-chip-list>
 
 
-<mat-card class="example-card mt-lg-3 bg-dark border border-primary" *ngFor="let articledto of articlesDto |filterPipe:filterText">
+<mat-card class="example-card mt-lg-3 mb-5 bg-dark border border-primary" *ngFor="let articledto of articlesDto |filterPipe:filterText">
     <mat-card-header>
       <mat-card-title class="text-primary">{{articledto.title}}</mat-card-title>
       <mat-card-subtitle class="text-white">
@@ -23,7 +23,7 @@
         <mat-expansion-panel class="bg-dark" hideToggle>
           <mat-expansion-panel-header>
             <mat-panel-title class="text-light">
-              Yazıyı oku
+              
             </mat-panel-title>
             <mat-panel-description class="text-white">
               tıkla ve yazılan yazıyı gör
@@ -36,29 +36,27 @@
       </mat-accordion>
     </mat-card-content>
     <mat-card-actions class="text-white">
-      <button mat-button color="warn">{{articledto.date |date}}</button>
-      <button mat-button color="primary">{{articledto.categoryName}}</button>
-      <button mat-button color="accent" routerLink="/articles/{{articledto.number}}"  (click)="readHistory(articledto)">incele</button>
-      <button mat-button color="accent"  (click)="openMessages('✖')">
-        <mat-icon>turned_in</mat-icon>
-      </button>
+      <div class="d-flex justify-content-evenly">
+        <button mat-button color="warn">{{articledto.date |date}}</button>
+        <button mat-button color="primary">{{articledto.categoryName}}</button>
+        
+        <button mat-icon-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="bg-dark">
+          <button mat-menu-item  routerLink="/articles/{{articledto.number}}" (click)="readHistory(articledto)">
+            <mat-icon class="text-white">details</mat-icon>
+            <span class="text-white">İncele</span>
+          </button>
+          <button mat-menu-item (click)="openMessages('✖')">
+            <mat-icon class="text-white">turned_in</mat-icon>
+            <span class="text-white">Kaydet</span>
+          </button>
+        </mat-menu>
+      </div>
+    <!-- <button mat-button color="warn" routerLink="/article/update/{{articledto.number}}">update article</button>
+    -->
     </mat-card-actions>
     
   <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
 </mat-card>
-
-
-<button mat-icon-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu">
-  <mat-icon>more_vert</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>details</mat-icon>
-    <span>İncele</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>turned_in</mat-icon>
-    <span>Kaydet</span>
-  </button>
-  
-</mat-menu>

@@ -41,11 +41,11 @@ export class ArticleService {
   }
 
   updateArticle(article:Article):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl + '/articles/articleupdate',article);
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'articles/articleupdate',article);
   }
 
   deleteArticle(article:Article):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl + '/articles/articledelete',article);
+    return this.httpClient.post<ResponseModel>(this.apiUrl + 'articles/articledelete',article);
   }
  
  

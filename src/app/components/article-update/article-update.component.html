@@ -1,8 +1,29 @@
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<h2 class="text-white text-center">
+  <span class="text-info">"{{articleTitle}}"</span> başlıklı olan yazıyı güncelliyorsunuz
+</h2>
+<form [formGroup]="articleUpdateForm">
+  <div class="form-floating mb-3">
+    <input type="number" formControlName="authorId" class="form-control bg-dark text-light" id="auth" placeholder="author">
+    <label for="auth" class="text-light">Author</label>
   </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label for="categoryselect"  class="text-white fs-5">Kategori seçiniz</label>
+  <div class="form-floating mb-3">
+    <!-- <input type="number"  formControlName="categoryId" class="form-control bg-dark text-light" id="asasas"> -->
+    <select id="categoryselect" class="form-select form-select mb-3 bg-dark text-white" formControlName="categoryId" aria-label=".form-select-lg example">
+      <option *ngFor="let category of categories" [ngValue]="category.categoryName">{{category.categoryName}}</option>
+    </select>
   </div>
+  <div class="form-floating mb-3">
+    <input type="text"  formControlName="title" class="form-control bg-dark text-light" id="ttl" placeholder="title">
+    <label for="ttl" class="text-light">Title</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text"  formControlName="writing" class="form-control bg-dark text-light" id="wrtng" placeholder="writing">
+    <label for="wrtng" class="text-light">Writing</label>
+    
+  </div>
+</form>
+
+<div class="d-grid gap-2">
+    <button mat-raised-button color="accent" (click)="updateArticle()">Güncelle</button>
+</div>

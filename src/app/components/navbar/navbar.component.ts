@@ -16,13 +16,13 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.isActiveIcon = localStorage.getItem('theme-mode')==="Dark"?true:false;
+    this.isActiveIcon = localStorage.getItem('iconActive')==="active"?true:false;
   }
 
 
   storeThemeSelection(){
     // document.body.classList.toggle('darkMode');
-    localStorage.setItem('theme-mode',this.isActiveIcon?"Dark":"Light")
+    localStorage.setItem('iconActive',this.isActiveIcon?"active":"disable")
   }
 
  
