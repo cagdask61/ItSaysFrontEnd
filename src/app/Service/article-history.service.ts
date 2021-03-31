@@ -20,13 +20,13 @@ export class ArticleHistoryService {
       articleHistoryItem.quantity = 1;
       ArticleHistorys.push(articleHistoryItem);
     }
-    //localStorage.setItem('history',articleDetail.title);
-    localStorage.setItem('historya',JSON.stringify(articleDetail));
+    localStorage.setItem('history',JSON.stringify(articleDetail));
   }
 
   writeHistory():ArticleHistory[]{
     return ArticleHistorys;
   }
+
 
 
 }

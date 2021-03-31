@@ -54,6 +54,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { LoginGuard } from './guards/login.guard';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     RegisterComponent,
     MessageComponent,
     FooterComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    NotFoundComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,

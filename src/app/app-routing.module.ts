@@ -9,10 +9,14 @@ import { CategoryComponent } from './components/category/category.component';
 import { GetStartComponent } from './components/get-start/get-start.component';
 import { HistoryComponent } from './components/history/history.component';
 import { LoginComponent } from './components/login/login.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
+  //{path:"",pathMatch:"full",redirectTo:"login"},
+
   {path:"",pathMatch:"full",component:ArticleComponent},
   {path:"categories/all",component:CategoryComponent},
   {path:"articles/all",component:ArticleComponent},
@@ -20,11 +24,13 @@ const routes: Routes = [
   {path:"articles/:articleId",component:ArticleDetailComponent},
   {path:"article/add",component:ArticleAddComponent, canActivate:[LoginGuard]},
   {path:"getStart",component:GetStartComponent},
-  {path:"history",component:HistoryComponent},
+  {path:"history",component:HistoryComponent, canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"category/add",component:CategoryAddComponent, canActivate:[LoginGuard]},
-  {path:"article/update/:id",component:ArticleUpdateComponent}
+  {path:"article/update/:id",component:ArticleUpdateComponent,canActivate:[LoginGuard]},
+  {path:"myprofile",component:MyProfileComponent,canActivate:[LoginGuard]},
+  {path:"**",component:NotFoundComponent}
 ];
 
 @NgModule({

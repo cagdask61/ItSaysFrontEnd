@@ -8,23 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   title:string = "It Says";
-  checkedDarkMode:boolean = false;
   dateTimePicker:Date;
-  navbarIcon:string[]=["home","article","post_add","history","dark_mode","how_to_reg","login"];
-  navbarInfoText:string[] = ["Ana sayfa","Yazılar","Yazı ekle","Geçmiş","Koyu mode","Kayıt ol","Giriş yap"]
-  isActiveIcon:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
-    this.isActiveIcon = localStorage.getItem('iconActive')==="active"?true:false;
   }
-
-
-  storeThemeSelection(){
-    // document.body.classList.toggle('darkMode');
-    localStorage.setItem('iconActive',this.isActiveIcon?"active":"disable")
-  }
-
- 
+  
 
 }

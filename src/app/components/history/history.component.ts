@@ -14,7 +14,6 @@ export class HistoryComponent implements OnInit {
 
   historyItems:ArticleHistory[] = [];
   articles:ArticleDto;
-  historyItems2:ArticleHistory;
   constructor(private articleHistoryService:ArticleHistoryService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -24,10 +23,12 @@ export class HistoryComponent implements OnInit {
   writeHistory(){
     this.historyItems = this.articleHistoryService.writeHistory();
     
-    this.articles = JSON.parse(localStorage.getItem('historya'));
+    this.articles = JSON.parse(localStorage.getItem('history'));
   }
 
   denemeClick(){
     this.dialog.open(MessageComponent);
   }
+
+
 }

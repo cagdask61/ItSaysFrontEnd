@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit {
   articlesDto:ArticleDto[] = [];
   messages:string;
   filterText:string="";
-  
+  messagetext:string;
   constructor(private articleService:ArticleService,private articleHistoryService:ArticleHistoryService,private toastrService:ToastrService,private _sncakBar:MatSnackBar,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -59,5 +59,7 @@ export class ArticleComponent implements OnInit {
   openMessages(action:string){
     this._sncakBar.open("En yakın zamanda",action,{duration:3000,verticalPosition:"bottom",horizontalPosition:"left"})
   }
+
+
  
 }

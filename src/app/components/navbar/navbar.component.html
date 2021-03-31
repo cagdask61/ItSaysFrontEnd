@@ -7,38 +7,39 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/" id="home" matTooltip="{{navbarInfoText[0]}}">
-              <mat-icon aria-hidden="false" aria-label="Example home icon" >
-                {{navbarIcon[0]}}
-              </mat-icon>
-              <span *ngIf="isActiveIcon"> {{navbarInfoText[0]}}</span>
+            <button mat-button color="primary" routerLink="/" id="home" matTooltip="Ana sayfa">
+              <mat-icon>home</mat-icon>
+              <span>Home</span>
             </button>
           </li>
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/article/add" id="articleadd" matTooltip="{{navbarInfoText[2]}}">
-              <mat-icon>{{navbarIcon[2]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[2]}}</span>
+            <button mat-button color="primary" routerLink="/article/add" id="articleadd" matTooltip="Yazı ekle">
+              <mat-icon>post_add</mat-icon> <span>Article Add</span>
             </button>
           </li>
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/history" id="history" matTooltip="{{navbarInfoText[3]}}">
-              <mat-icon>{{navbarIcon[3]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[3]}}</span>
+            <button mat-button color="primary" routerLink="/history" id="history" matTooltip="Geçmiş e bak">
+              <mat-icon>history</mat-icon> <span> History</span>
             </button>
           </li>
-          <!-- <li class="nav-item">
-            <button mat-button color="primary" routerLink="/register" id="register" matTooltip="{{navbarInfoText[5]}}">
-              <mat-icon>{{navbarIcon[5]}}</mat-icon>
-            </button>
-          </li> -->
+          
           <li class="nav-item">
-            <button mat-button color="primary" routerLink="/login" id="login" matTooltip="{{navbarInfoText[6]}}">
-              <mat-icon>{{navbarIcon[6]}}</mat-icon> <span *ngIf="isActiveIcon"> {{navbarInfoText[6]}}</span>
+            <button mat-button color="primary" routerLink="/login" id="login" matTooltip="Giriş yap">
+              <mat-icon>login</mat-icon> <span> Login</span>
             </button>
           </li>
+         
         </ul>
         <span class="navbar-text">
-          <mat-slide-toggle  [(ngModel)]="isActiveIcon" (change)="storeThemeSelection()" matTooltip="İconları gösterir">
-            Icon
-          </mat-slide-toggle>
+            
+          
+            <button mat-button [matMenuTriggerFor]="menu" color="accent">
+              <mat-icon>account_circle</mat-icon> <span> Profile</span>
+            </button>
+            <mat-menu #menu="matMenu" class="bg-dark">
+              <app-my-profile></app-my-profile>
+            </mat-menu>
+
         </span>
       </div>
     </div>

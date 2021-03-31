@@ -39,5 +39,8 @@ export class CategoryAddComponent implements OnInit {
         }
       })
     }
+    else{
+      this.toastrService.warning("Lütfen Boş bırakmayınız","Uyarı!");
+    }
   }
 }
