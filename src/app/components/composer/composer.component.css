@@ -1,0 +1,7 @@
+.bg-Cart{
+    background-color: #17202A;
+    transition: .2s;
+}
+.bg-Cart:hover{
+    transform: scale(1.05);
+}

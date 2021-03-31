@@ -56,6 +56,7 @@ import { LoginGuard } from './guards/login.guard';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { ComposerComponent } from './components/composer/composer.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     FooterComponent,
     CategoryAddComponent,
     NotFoundComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    ComposerComponent
   ],
   imports: [
     BrowserModule,

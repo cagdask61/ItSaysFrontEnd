@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../Models/Auth/loginModel';
+import { RegisterModule } from '../Models/Auth/registerModel';
 import { TokenModel } from '../Models/Auth/tokenModel';
 import { SingleResponseModel } from '../Models/singleResponseModel';
 
@@ -19,7 +20,7 @@ export class AuthService {
     return this.htttpClient.post<SingleResponseModel<TokenModel>>(this.apiLoginUrl,loginModel)
   }
 
-  register(registerModule:LoginModel):Observable<SingleResponseModel<TokenModel>>{
+  register(registerModule:RegisterModule):Observable<SingleResponseModel<TokenModel>>{
     return this.htttpClient.post<SingleResponseModel<TokenModel>>(this.apiRegisterUrl,registerModule)
   }
 

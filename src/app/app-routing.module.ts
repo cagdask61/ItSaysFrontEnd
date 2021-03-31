@@ -6,6 +6,7 @@ import { ArticleUpdateComponent } from './components/article-update/article-upda
 import { ArticleComponent } from './components/article/article.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ComposerComponent } from './components/composer/composer.component';
 import { GetStartComponent } from './components/get-start/get-start.component';
 import { HistoryComponent } from './components/history/history.component';
 import { LoginComponent } from './components/login/login.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:"category/add",component:CategoryAddComponent, canActivate:[LoginGuard]},
   {path:"article/update/:id",component:ArticleUpdateComponent,canActivate:[LoginGuard]},
   {path:"myprofile",component:MyProfileComponent,canActivate:[LoginGuard]},
+  {path:"composers",component:ComposerComponent,canActivate:[LoginGuard]},
   {path:"**",component:NotFoundComponent}
 ];
 
