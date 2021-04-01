@@ -1,6 +1,7 @@
 # It Says (Diyorki) yapılış amacı herkesin bilgilerini halka paylaşması ve bigilenmesidir. It Says tartışma , eleştirme, yorumlama yoktur isteyen herkes bilgilerini paylaşabilir.
 It Says şuan geliştirme aşamasında.
 <h3>It Says ile ilgili görüntüler</h3>
+
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg1.png"/>
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg2.png"/>
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg3.png"/>
@@ -10,3 +11,6 @@ It Says şuan geliştirme aşamasında.
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg7.png"/>
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg8.png"/>
 
+
+<h4>Kullanılan teklonojiler = Angular , Angular Material , Bootstrap </h4>
+<h4>Api oluşturmak için kullanılan teklonojiler = C# , Asp.NET Core , Entityframework , Autofac , Fluent Validation </h4>
