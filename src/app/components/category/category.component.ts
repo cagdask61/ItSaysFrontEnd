@@ -36,7 +36,6 @@ export class CategoryComponent implements OnInit {
 
   setCurrentCategory(category:Category){
     this.currentCategory = category;
-    // this.toastrService.info(category.categoryName,"tıklandı")
   }
 
   getCurrentCategoryClass(category:Category){

@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { Composer } from 'src/app/Models/ComposerModel/composer';
 import { ComposerService } from 'src/app/Service/composer.service';
@@ -23,5 +24,9 @@ export class ComposerComponent implements OnInit {
       this.composerData = response.data
       this.composerMessage = response.message
     })
+  }
+
+  drop(event: CdkDragDrop<Composer[]>) {
+    moveItemInArray(this.composerData, event.previousIndex, event.currentIndex);
   }
 }

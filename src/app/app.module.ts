@@ -30,6 +30,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -115,6 +117,8 @@ import { ComposerComponent } from './components/composer/composer.component';
     MatPaginatorModule,
     MatBottomSheetModule,
     MatDialogModule,
+    DragDropModule,
+    ClipboardModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-left"
     })

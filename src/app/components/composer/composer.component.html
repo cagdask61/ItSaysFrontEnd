@@ -1,11 +1,11 @@
 
-<mat-card class="example-card mb-2 mt-2 bg-Cart border border-2 border-danger" *ngFor="let com of composerData">
-    <mat-card-header>
+<mat-card cdkDropList (cdkDropListDropped)="drop($event)" class="example-card bg-dark example-list  border border-1 border-danger"  >
+    <mat-card-header class="example-box" *ngFor="let com of composerData" cdkDrag>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title class="text-light">{{com.email}}</mat-card-title>
       <mat-card-subtitle class="text-light">
           {{com.firstName}} -- {{com.lastName}}
       </mat-card-subtitle>
     </mat-card-header>
-    
   </mat-card>
+

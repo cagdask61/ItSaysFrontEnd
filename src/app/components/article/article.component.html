@@ -29,7 +29,8 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-chip-list aria-label="Fish selection">
-          <mat-chip color="primary" class="pad" selected>{{articledto.writing}}</mat-chip>
+          <mat-chip color="primary" class="pad" selected >{{articledto.writing}}</mat-chip>
+          <button mat-button color="accent" [cdkCopyToClipboard]="articledto.writing">copy</button>
           </mat-chip-list>
         </mat-expansion-panel>
       </mat-accordion>

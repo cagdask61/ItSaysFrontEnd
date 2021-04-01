@@ -23,14 +23,7 @@ export class ArticleDetailComponent implements OnInit {
   constructor(private router:Router,private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params=>{
-      if(params["articleId"]){
-        this.getArticleDto(params["articleId"])
-      }
-      else{
-        this._snackBar.open("Hata!","Close",{duration:4000,verticalPosition:"top",horizontalPosition:"center"});
-      }
-    })
+    this.getActiveRoute();
   }
 
   getArticleDto(articleId:number){
@@ -45,6 +38,16 @@ export class ArticleDetailComponent implements OnInit {
     })
   }
 
+  getActiveRoute(){
+    this.activatedRoute.params.subscribe(params=>{
+      if(params["articleId"]){
+        this.getArticleDto(params["articleId"])
+      }
+      else{
+        this._snackBar.open("Hata!","Close",{duration:4000,verticalPosition:"top",horizontalPosition:"center"});
+      }
+    })
+  }
 
 }
 

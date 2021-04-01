@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:"articles/category/:categoryId",component:ArticleComponent},
   {path:"articles/:articleId",component:ArticleDetailComponent},
   {path:"article/add",component:ArticleAddComponent, canActivate:[LoginGuard]},
-  {path:"getStart",component:GetStartComponent},
+  {path:"getstart",component:GetStartComponent},
   {path:"history",component:HistoryComponent, canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
