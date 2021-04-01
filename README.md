@@ -13,4 +13,4 @@ It Says şuan geliştirme aşamasında.
 
 
 <h4>Kullanılan teklonojiler = Angular , Angular Material , Bootstrap </h4>
-<h4>Api oluşturmak için kullanılan teklonojiler = C# , Asp.NET Core , Entityframework , Autofac , Fluent Validation </h4>
+<h4>Api de  kullanılan teklonojiler = C# , Asp.NET Core , Entityframework , Autofac , Fluent Validation </h4>
