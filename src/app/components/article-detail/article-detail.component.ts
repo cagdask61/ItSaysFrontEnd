@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ArticleDto } from 'src/app/Models/ArticleModel/articleDto';
 import { ArticleService } from 'src/app/Service/article.service';
+import { MessageService } from 'src/app/Service/message.service';
 
 @Component({
   selector: 'app-article-detail',
@@ -20,7 +21,7 @@ export class ArticleDetailComponent implements OnInit {
   articleFirstName:string;
   articleLastName:string;
   isCheckedData:boolean=false;
-  constructor(private router:Router,private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private _snackBar: MatSnackBar) { }
+  constructor(private messageService:MessageService,private router:Router,private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getActiveRoute();
@@ -44,7 +45,7 @@ export class ArticleDetailComponent implements OnInit {
         this.getArticleDto(params["articleId"])
       }
       else{
-        this._snackBar.open("Hata!","Close",{duration:4000,verticalPosition:"top",horizontalPosition:"center"});
+        this.messageService.openMessageAndAction("Hata oluştu!","Ok",3000);
       }
     })
   }

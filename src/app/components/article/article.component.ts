@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ArticleDto } from 'src/app/Models/ArticleModel/articleDto';
 import { ArticleHistoryService } from 'src/app/Service/article-history.service';
 import { ArticleService } from 'src/app/Service/article.service';
+import { MessageService } from 'src/app/Service/message.service';
 
 @Component({
   selector: 'app-article',
@@ -17,7 +18,7 @@ export class ArticleComponent implements OnInit {
   messages:string;
   filterText:string="";
   messagetext:string;
-  constructor(private articleService:ArticleService,private articleHistoryService:ArticleHistoryService,private toastrService:ToastrService,private _sncakBar:MatSnackBar,private activatedRoute:ActivatedRoute) { }
+  constructor(private _snackBar:MatSnackBar,private articleService:ArticleService,private articleHistoryService:ArticleHistoryService,private toastrService:ToastrService,private messageService:MessageService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getActivedRouteCategory();
@@ -56,10 +57,14 @@ export class ArticleComponent implements OnInit {
   }
 
 
-  openMessages(action:string){
-    this._sncakBar.open("En yakın zamanda",action,{duration:3000,verticalPosition:"bottom",horizontalPosition:"left"})
+  openMessage(){
+    
+    this.messageService.openMessageAndAction("En Yakın Zamanda")
   }
 
 
+  copyMessageReturn(){
+    this.messageService.openMessageAndAction("Başarıyla kopyalandı","Ok",3000)
+  }
  
 }

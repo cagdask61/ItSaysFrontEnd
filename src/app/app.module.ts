@@ -59,6 +59,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 import { ComposerComponent } from './components/composer/composer.component';
+import { ComposerfilterPipe } from './Pipes/composerfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { ComposerComponent } from './components/composer/composer.component';
     CategoryAddComponent,
     NotFoundComponent,
     MyProfileComponent,
-    ComposerComponent
+    ComposerComponent,
+    ComposerfilterPipe
   ],
   imports: [
     BrowserModule,

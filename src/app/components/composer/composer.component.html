@@ -1,4 +1,7 @@
 
+<h1 class="text-center text-light">
+  Site Yöneticileri
+</h1>
 <mat-card cdkDropList (cdkDropListDropped)="drop($event)" class="example-card bg-dark example-list  border border-1 border-danger"  >
     <mat-card-header class="example-box" *ngFor="let com of composerData" cdkDrag>
       <div mat-card-avatar class="example-header-image"></div>
@@ -9,3 +12,10 @@
     </mat-card-header>
   </mat-card>
 
+  <div class="input-group mb-5 mt-5">
+    <span class="input-group-text" id="basic-addon1">FirstName</span>
+    <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="First Name Search" aria-label="FirstName" aria-describedby="basic-addon1">
+  </div>
+  <div class="text-center text-info bold mb-5"> 
+    En yakın zamanda
+  </div>

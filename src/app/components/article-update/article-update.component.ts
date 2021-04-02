@@ -6,6 +6,7 @@ import { Article } from 'src/app/Models/ArticleModel/article';
 import { Category } from 'src/app/Models/CategoryModel/category';
 import { ArticleService } from 'src/app/Service/article.service';
 import { CategoryService } from 'src/app/Service/category.service';
+import { MessageService } from 'src/app/Service/message.service';
 
 @Component({
   selector: 'app-article-update',
@@ -18,7 +19,7 @@ export class ArticleUpdateComponent implements OnInit {
   categories:Category[]=[];
   articleId:number;
   articleTitle:string;
-  constructor(private categoryService:CategoryService,private activatedRoute:ActivatedRoute,private articleService:ArticleService,private toastrService:ToastrService,private formBuilder:FormBuilder) { }
+  constructor(private messageService:MessageService,private categoryService:CategoryService,private activatedRoute:ActivatedRoute,private articleService:ArticleService,private toastrService:ToastrService,private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
     this.getArticleRoute();
@@ -51,12 +52,14 @@ export class ArticleUpdateComponent implements OnInit {
         if(responseError.error.Errors.length>0){
           for (let i = 0; i < responseError.error.Errors.length; i++) {
             this.toastrService.error(responseError.error.Errors.length[i].ErrorMessage);
+            this.messageService.openToastrMessageBoxError(responseError.error.Errors[i].ErrorMessage,"Ok");
           }
         }
       })
     }
     else{
-      this.toastrService.info("hata var");
+      //this.toastrService.info("hata var");
+      this.messageService.openToastrMessageBoxInfo("Hata var");
     }
   }
 

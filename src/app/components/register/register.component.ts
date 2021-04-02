@@ -3,6 +3,7 @@ import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/Service/auth.service';
+import { MessageService } from 'src/app/Service/message.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm:FormGroup;
 
-  constructor(private router:Router,private formBuilder:FormBuilder,private authService:AuthService,private toastrService:ToastrService) { }
+  constructor(private messageService:MessageService,private router:Router,private formBuilder:FormBuilder,private authService:AuthService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.createRegisterForm();
@@ -33,12 +34,14 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       let registerModel = Object.assign({},this.registerForm.value)
       this.authService.register(registerModel).subscribe(response=>{
-        this.toastrService.success(response.message)
+        //this.toastrService.success(response.message)
+        this.messageService.openToastrMessageBoxSuccess(response.message);
         this.router.navigate(["/login"]);
       })
     }
     else{
-      this.toastrService.error("Hata")
+      //this.toastrService.error("Hata")
+      this.messageService.openToastrMessageBoxError("Hata!");
     }
   }
 }

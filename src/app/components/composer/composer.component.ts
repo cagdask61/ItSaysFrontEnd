@@ -12,6 +12,7 @@ export class ComposerComponent implements OnInit {
 
   composerData:Composer[];
   composerMessage:string;
+  filterText:string = '';
   constructor(private composerService:ComposerService) { }
 
   ngOnInit(): void {

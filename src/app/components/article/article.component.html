@@ -30,7 +30,7 @@
           </mat-expansion-panel-header>
           <mat-chip-list aria-label="Fish selection">
           <mat-chip color="primary" class="pad" selected >{{articledto.writing}}</mat-chip>
-          <button mat-button color="accent" [cdkCopyToClipboard]="articledto.writing">copy</button>
+          <button mat-button color="accent" [cdkCopyToClipboard]="articledto.writing" (click)="copyMessageReturn()">Copy</button>
           </mat-chip-list>
         </mat-expansion-panel>
       </mat-accordion>
@@ -48,7 +48,7 @@
             <mat-icon class="text-white">details</mat-icon>
             <span class="text-white">İncele</span>
           </button>
-          <button mat-menu-item (click)="openMessages('✖')">
+          <button mat-menu-item (click)="openMessage()">
             <mat-icon class="text-white">turned_in</mat-icon>
             <span class="text-white">Kaydet</span>
           </button>

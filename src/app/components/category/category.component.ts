@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/Models/CategoryModel/category';
 import { CategoryService } from 'src/app/Service/category.service';
 import {FormControl} from '@angular/forms';
+import { MessageService } from 'src/app/Service/message.service';
 
 @Component({
   selector: 'app-category',
@@ -19,7 +20,7 @@ export class CategoryComponent implements OnInit {
   title:string = "Tümü";
   filterText:string="";
   isCategoryList:boolean = false;
-  constructor(private categoryService:CategoryService,private toastrService:ToastrService, private _snackBar: MatSnackBar,private activedRoute:ActivatedRoute) { }
+  constructor(private messageService:MessageService,private categoryService:CategoryService,private toastrService:ToastrService, private _snackBar: MatSnackBar,private activedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCategories();
@@ -59,7 +60,8 @@ export class CategoryComponent implements OnInit {
   }
 
   openSnackBar(text:string) {
-      this._snackBar.open(text,"Close",{duration:1000,horizontalPosition:"left"});
+      //this._snackBar.open(text,"Close",{duration:1000,horizontalPosition:"left"});
+      this.messageService.openMessageAndAction(text,"Ok",3000);
   }
 
   isCategoryDisable(){
