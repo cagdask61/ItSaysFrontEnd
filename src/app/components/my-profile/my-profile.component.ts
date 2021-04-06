@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { LoginModel } from 'src/app/Models/Auth/loginModel';
 import { MessageService } from 'src/app/Service/message.service';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-my-profile',
@@ -24,6 +26,11 @@ export class MyProfileComponent implements OnInit {
     else{
       //this.toastrService.error("Çıkış yapılamadı");
       this.messageService.openToastrMessageBoxError("Çıkış yapılamadı!");
+      
     }
   }
+
+  // myAccount(){
+  //   this.loginComponent.account();
+  // }
 }

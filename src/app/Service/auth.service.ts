@@ -24,6 +24,7 @@ export class AuthService {
     return this.htttpClient.post<SingleResponseModel<TokenModel>>(this.apiRegisterUrl,registerModule)
   }
 
+
   isAuthenticated(){
     if(localStorage.getItem('atoken')){
       return true;

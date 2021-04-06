@@ -44,4 +44,9 @@ export class LoginComponent implements OnInit {
       })
     }
   }
+
+  // account(){
+  //   let loginModel = Object.assign({},this.loginForm.value);
+  //   return loginModel;
+  // }
 }
