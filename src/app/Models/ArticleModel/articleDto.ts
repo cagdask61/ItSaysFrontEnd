@@ -1,5 +1,6 @@
 export interface ArticleDto{
     number:number;
+    categoryNumber:number;
     title:string;
     firstName:string;
     lastName:string;

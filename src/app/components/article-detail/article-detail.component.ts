@@ -20,8 +20,11 @@ export class ArticleDetailComponent implements OnInit {
   articleDate:Date;
   articleFirstName:string;
   articleLastName:string;
+
   isCheckedData:boolean=false;
-  constructor(private messageService:MessageService,private router:Router,private articleService:ArticleService,private activatedRoute:ActivatedRoute,private toastrService:ToastrService, private _snackBar: MatSnackBar) { }
+
+
+  constructor(private messageService:MessageService,private articleService:ArticleService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getActiveRoute();
@@ -29,6 +32,7 @@ export class ArticleDetailComponent implements OnInit {
 
   getArticleDto(articleId:number){
     this.articleService.getArticlesDetailArticleId(articleId).subscribe(response=>{
+      
       this.articleTitle = response.data.title
       this.articleFirstName = response.data.firstName
       this.articleLastName = response.data.lastName  

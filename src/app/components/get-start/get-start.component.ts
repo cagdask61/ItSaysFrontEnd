@@ -11,7 +11,6 @@ import { ComposerService } from 'src/app/Service/composer.service';
 export class GetStartComponent implements OnInit {
 
  
-
   constructor() { }
 
   

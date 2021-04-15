@@ -10,11 +10,11 @@
   </mat-chip>
 </mat-chip-list>
 
-<mat-card class="example-card mt-lg-3 mb-5 bg-dark border border-primary" *ngFor="let articledto of articlesDto |filterPipe:filterText">
+<mat-card class="example-card mt-lg-3 mb-5 bg-dark border border-primary" *ngFor="let article of articlesDto |filterPipe:filterText">
     <mat-card-header>
-      <mat-card-title class="text-primary">{{articledto.title}}</mat-card-title>
+      <mat-card-title class="text-primary">{{article.title}}</mat-card-title>
       <mat-card-subtitle class="text-white">
-         <strong class="authorinfo"> {{articledto.firstName}} / {{articledto.lastName}}</strong>
+         <strong class="authorinfo"> {{article.firstName}} / {{article.lastName}}</strong>
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
@@ -29,22 +29,22 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-chip-list aria-label="Fish selection">
-          <mat-chip color="primary" class="pad" selected >{{articledto.writing}}</mat-chip>
-          <button mat-button color="accent" [cdkCopyToClipboard]="articledto.writing" (click)="copyMessageReturn()">Copy</button>
+          <mat-chip color="primary" class="pad" selected >{{article.writing}}</mat-chip>
+          <button mat-button color="accent" [cdkCopyToClipboard]="article.writing" (click)="copyMessageReturn()">Copy</button>
           </mat-chip-list>
         </mat-expansion-panel>
       </mat-accordion>
     </mat-card-content>
     <mat-card-actions class="text-white">
       <div class="d-flex justify-content-evenly">
-        <button mat-button color="warn">{{articledto.date |date}}</button>
-        <button mat-button color="primary">{{articledto.categoryName}}</button>
+        <button mat-button color="warn">{{article.date |date}}</button>
+        <button mat-button color="primary" >{{article.categoryName}}</button>
         
         <button mat-icon-button [matMenuTriggerFor]="menu" color="accent" aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu" class="bg-dark">
-          <button mat-menu-item  routerLink="/articles/{{articledto.number}}" (click)="readHistory(articledto)">
+          <button mat-menu-item  routerLink="/articles/{{article.number}}" (click)="readHistory(article)">
             <mat-icon class="text-white">details</mat-icon>
             <span class="text-white">İncele</span>
           </button>
