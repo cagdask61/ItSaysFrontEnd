@@ -26,6 +26,10 @@
 <code>npm install bootstrap</code>
 </pre>
 
+<pre>
+# Download Material Design
+<code>ng add @angular/material</code>
+</pre>
 
 
 <h3>It Says ile ilgili görüntüler</h3>
@@ -39,6 +43,3 @@
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg7.png"/>
 <img src="https://github.com/cagdask61/ItSaysFrontEnd/blob/master/src/assets/Img/AngularImg/AngularImg8.png"/>
 
-
-<h4>Kullanılan teklonojiler = Angular , Angular Material , Bootstrap </h4>
-<h4>Api de  kullanılan teklonojiler = C# , Asp.NET Core , Entityframework , Autofac , Fluent Validation </h4>
