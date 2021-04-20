@@ -1,5 +1,5 @@
-# It Says (Diyorki) yapılış amacı herkesin bilgilerini halka paylaşması ve bigilenmesidir. It Says tartışma , eleştirme, yorumlama yoktur isteyen herkes bilgilerini paylaşabilir.
-## It Says şuan geliştirme aşamasında.
+## It Says (Diyorki) yapılış amacı herkesin bilgilerini halka paylaşması ve bigilenmesidir. It Says tartışma , eleştirme, yorumlama yoktur isteyen herkes bilgilerini paylaşabilir.
+### It Says şuan geliştirme aşamasında.
 
 <pre>
 # It Says Start
